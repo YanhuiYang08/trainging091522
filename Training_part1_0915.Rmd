@@ -1,0 +1,58 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Packages
+```{r}
+install.packages("haven", "ggplot2", "dplyr")
+install.packages("ggplot2")
+library(haven)
+library(ggplot2)
+library(dplyr)
+```
+
+Import ADAE
+```{r}
+
+adae <- read_sas("https://github.com/elong0527/r4csr/raw/master/data-adam/adae.sas7bdat", 
+    NULL)
+```
+
+Import ADSL
+```{r}
+adsl <- read_sas("https://github.com/elong0527/r4csr/raw/master/data-adam/adsl.sas7bdat", 
+    NULL)
+```
+
+ggplot2
+```{r}
+ggplot2(adae) +
+  aes(x = TRTA, y = AEBODSYS, fill = AESEV) +
+  geom_tile(size = 1.2) +
+  scale_fill_hue(direction = 1) +
+  theme_minimal()
+
+
+
+```
+
+ggplot(ggplot2::economics) +
+  aes(x = date, y = pce, fill = psavert) +
+  geom_line(size = 0.5, colour = "#112446") +
+  scale_fill_gradient() +
+  theme_minimal()
+
+
+Prep Data
+```{r}
+
+```
+
+
+Table
+
+```{r}
+
+
+```
